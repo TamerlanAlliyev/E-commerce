@@ -1,0 +1,84 @@
+"use strict";
+
+import products from "./data.js";
+
+const filterBtns = document.querySelectorAll(".filterBtn");
+const filterLists = document.querySelectorAll(".filterList");
+const chevronIcon = document.querySelectorAll(".chevronIcon");
+
+const categoryItem = document.querySelectorAll("#categoryList li");
+const colorItem = document.querySelectorAll("#colorList li");
+const sizeItem = document.querySelectorAll("#sizeList li");
+
+
+const colorItemsDots = document.querySelectorAll("#colorList li span");
+
+const productsCount = document.getElementById("products-count");
+
+const filteredCategories = [];
+const filteredColors = [];
+const filteredSizes = [];
+
+filterBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    filterLists[index].classList.toggle("hidden");
+    chevronIcon[index].classList.toggle("-rotate-180");
+  });
+});
+
+categoryItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("font-black");
+    const { category } = item.dataset;
+    displayProduct();
+    if (filteredCategories.includes(category)) {
+      const categoryIndex = filteredCategories.indexOf(category);
+      filteredCategories.splice(categoryIndex, 1);
+    } else {
+      filteredCategories.push(category);
+    }
+    console.log(filteredCategories);
+  });
+});
+
+colorItem.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    const { color } = item.dataset;
+    colorItemsDots[index].classList.toggle("hidden");
+    displayProduct();
+    const colorIndex = filteredColors.indexOf(color);
+    if (colorIndex !== -1) {
+      filteredColors.splice(colorIndex, 1);
+    } else {
+      filteredColors.push(color);
+    }
+    console.log(filteredColors);
+  });
+});
+
+sizeItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    const size = item.dataset.size;
+    displayProduct();
+    item.classList.toggle("bg-black");
+    item.classList.toggle("text-white");
+
+    const index = filteredSizes.indexOf(size);
+    if (index !== -1) {
+      filteredSizes.splice(index, 1);
+    } else {
+      filteredSizes.push(size);
+    }
+    console.log(filteredSizes);
+  });
+});
+
+productsCount.textContent = products.length;
+
+const displayProduct = () => {
+const filterByCategory = products.filter((product) => {
+  for (let i = 0; i < filteredCategories.length; i++) {
+  return product.category === filteredColors[i];    
+  }
+})
+};

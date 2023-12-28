@@ -1,0 +1,8 @@
+productPage/script.js :
+1.Rənglərin kateqoriyaya görə dəyişdirilməsi (qara rəngə görə)
+
+
+
+
+script.js:
+1.Size category-da  active olduqda background qara rəng olur
