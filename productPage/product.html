@@ -118,25 +118,37 @@
             <!-- Size -->
             <div class="mb-28">
               <h3 class="text-xs font-bold mb-3">Choose your size</h3>
-              <ul class="flex flex-wrap gap-2">
+              <ul id="sizeList" class="flex flex-wrap gap-2">
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                  data-size="xs"
+                >
+                  <button class="uppercase w-full h-full">xs</button>
+                </li>
+                <li
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
                   data-size="s"
                 >
                   <button class="uppercase w-full h-full">s</button>
                 </li>
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
-                  data-size="s"
+                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                  data-size="m"
                 >
-                  <button class="uppercase w-full h-full">s</button>
+                  <button class="uppercase w-full h-full">m</button>
                 </li>
                 <li
-                  class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg"
-                  data-size="s"
-                >
-                  <button class="uppercase w-full h-full">s</button>
-                </li>
+                class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+                data-size="l"
+              >
+                <button class="uppercase w-full h-full">l</button>
+              </li>
+              <li
+              class="font-bold bg-gray-200 text-black w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden"
+              data-size="xl"
+            >
+              <button class="uppercase w-full h-full">xl</button>
+            </li>
               </ul>
             </div>
             <!-- Counter -->
